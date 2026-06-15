@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Chikoo Baby ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#fdf0d5;
+    overflow-x:hidden;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left, rgba(255,182,193,.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(255,105,180,.15), transparent 30%),
+        radial-gradient(circle at bottom, rgba(255,192,203,.12), transparent 40%),
+        linear-gradient(to bottom,#2b0615 0%,#4a0e22 35%,#6b1833 70%,#2a0410 100%);
+}
+
+/* Soft pink glow */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    filter:blur(120px);
+    pointer-events:none;
+    z-index:0;
+}
+
+body::before{
+    background:rgba(255,105,180,.15);
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    background:rgba(255,182,193,.12);
+    bottom:-100px;
+    right:-100px;
+}
+
+/* Floating hearts and roses */
+
+.floating-elements{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.float-item{
+    position:absolute;
+    top:-10%;
+    opacity:.7;
+    animation:fall linear infinite;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10vh) translateX(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.85;
+    }
+
+    100%{
+        transform:translateY(110vh) translateX(120px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Candle glow */
+
+.candle{
+    position:fixed;
+    bottom:30px;
+    width:18px;
+    height:100px;
+    background:#f2d6a2;
+    border-radius:6px;
+    z-index:5;
+}
+
+.left{
+    left:40px;
+}
+
+.right{
+    right:40px;
+}
+
+.flame{
+    position:absolute;
+    top:-28px;
+    left:50%;
+    transform:translateX(-50%);
+    width:22px;
+    height:35px;
+    background:radial-gradient(circle,#fff4a3 0%,#ffb703 60%,transparent 75%);
+    border-radius:50%;
+    animation:flicker .25s infinite alternate;
+}
+
+@keyframes flicker{
+    from{
+        transform:translateX(-50%) scale(1);
+    }
+
+    to{
+        transform:translateX(-50%) scale(1.12);
+    }
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+    z-index:10;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5.8rem;
+    color:#ffd6e0;
+    text-shadow:
+        0 0 15px rgba(255,182,193,.5),
+        0 0 40px rgba(255,105,180,.3);
+}
+
+.hero p{
+    max-width:720px;
+    margin-top:20px;
+    line-height:1.9;
+    font-size:1.15rem;
+    color:#fff0f3;
+}
+
+.open-btn{
+    margin-top:40px;
+    padding:18px 42px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#b5179e,#e53888);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 30px rgba(229,56,136,.4);
+}
+
+.open-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+.content{
+    display:none;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding-bottom:80px;
+    position:relative;
+    z-index:10;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,214,224,.15);
+    backdrop-filter:blur(14px);
+    border-radius:30px;
+    padding:35px;
+    margin:35px 0;
+    box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+.card h2{
+    font-family:'Cinzel',serif;
+    text-align:center;
+    color:#ffd6e0;
+    margin-bottom:30px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid rgba(255,214,224,.25);
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.letter{
+    background:linear-gradient(135deg,#fff4f6,#ffe4ec);
+    color:#5c2436;
+    border-radius:20px;
+    padding:35px;
+    line-height:2;
+    font-size:1.1rem;
+    font-family:Georgia,serif;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.button{
+    display:block;
+    margin:35px auto;
+    padding:18px 40px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#c9184a,#ff4d8d);
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-4px);
+}
+
+.signature{
+    text-align:center;
+    margin-top:40px;
+    font-family:'Great Vibes',cursive;
+    color:#ffd6e0;
+    font-size:3rem;
+}
+
+.popup{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.75);
+    z-index:100;
+}
+
+.popup-box{
+    width:90%;
+    max-width:500px;
+    background:linear-gradient(135deg,#fff4f6,#ffe4ec);
+    color:#5c2436;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.popup-box h3{
+    font-family:'Great Vibes',cursive;
+    color:#c9184a;
+    font-size:3.2rem;
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .candle{
+        display:none;
+    }
+
+    .gallery img{
+        height:260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-elements" id="floatingElements"></div>
+
+<div class="candle left">
+    <div class="flame"></div>
+</div>
+
+<div class="candle right">
+    <div class="flame"></div>
+</div>
+
+<section class="hero" id="hero">
+
+    <h1>For My Chikoo Baby ❤️</h1>
+
+    <p>
+        Every rose reminds me of your beauty, and every flame reminds me
+        of the warmth you bring into my life.
+    </p>
+
+    <button class="open-btn" id="openBtn">
+        Open My Heart 🌹
+    </button>
+
+</section>
+
+<div class="content" id="content">
+
+    <div class="card">
+        <h2>Our Beautiful Memories 📸</h2>
+
+        <div class="gallery">
+            <img src="photo1.jpg" alt="">
+            <img src="photo2.jpg" alt="">
+            <img src="photo3.jpg" alt="">
+            <img src="photo4.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>I am Sorry Dudu 💌</h2>
+
+        <div class="letter">
+            My Dudu ❤️,
+
+I am truly sorry for hurting you.
+
+I know that my actions made you feel unimportant, unheard, and alone, and I hate that I became the reason for your tears. You deserve someone who makes you feel loved, valued, reassured, and safe, especially when you're upset, and I'm sorry that I failed to do that.
+
+You deserved my patience, my understanding, my reassurance, and my love. Instead, I let my anger and ego take over, and I made you feel hurt, unheard, and unimportant.
+
+I know I should have handled everything differently. I could have listened to you calmly, understood your feelings, reassured you, and chosen love over my anger and ego. Instead, I let my frustration take over, and I ended up hurting the person I care about the most.
+
+I know I made you feel like you weren't my priority, and I'm deeply sorry for that. You should never have to question your place in my life or wonder how much you mean to me.
+
+I never want you to feel like you have to question my love for you or wonder whether you matter to me, because you do. You matter more than my pride, more than any argument, and more than anything that could ever come between us.
+
+You deserve someone who protects your heart, not someone who becomes the reason for your tears.
+
+I understand that saying, "I didn't mean to hurt you," doesn't take away your pain. What matters is that I hurt you, and I take full responsibility for that.
+
+I'm sorry for every moment that made you feel ignored.
+
+I'm sorry for every moment that made you feel like your feelings weren't important to me.
+
+I'm sorry for every moment that made you question my love, my care, and my promises.
+
+I'm sorry for not giving you the comfort, attention, and reassurance you needed from me.
+
+You are not asking for too much. Wanting love, attention, reassurance, honesty, and effort from the person you love is the most natural thing in the world, and you deserve all of it.
+
+You deserve patience, understanding, honesty, and gentle love, and I promise to work on becoming better for you and for us.
+
+I don't want to keep repeating the same mistakes. I want to learn from them and show you through my actions that you are deeply loved and cherished.
+
+I know I can't fix everything with just words, and I don't expect this apology to erase your pain instantly. I only want you to know that your feelings matter to me, your tears matter to me, and you matter to me more than my pride, my anger, or any argument.
+
+Please don't ever doubt your place in my heart. You are precious to me, and I never want to be the reason you feel broken or alone.
+
+I love you more than I can put into words, and I hope that with time, patience, and consistent effort, I can rebuild the trust and comfort that I hurt.
+
+I'm here, and I'll keep choosing you.
+
+Forever your Bubu ❤️
+
+        </div>
+    </div>
+
+    <button class="button" id="surpriseBtn">
+        Dudu ! Open me ✨
+    </button>
+
+    <div class="signature">
+        — From your Bubu ❤️
+    </div>
+
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-box">
+
+        <h3>For You ❤️</h3>
+
+        <p>
+            My Dudu ❤️,
+I know I can't undo the hurt I've caused, but I want to give us something beautiful to look forward to.
+When you come to Nagpur, I'm taking you on a special date just you and me. No distractions, no arguments, no phones stealing our attention. Just us, making new memories together.
+I already have a little surprise planned for you, but I'm keeping it a secret for now because I want to see that beautiful smile on my cutu 🥰 when the moment finally comes. ✨🌹
+        </p>
+
+        <br>
+
+        <button class="button" onclick="closePopup()">
+            Close ❤️
+        </button>
+
+    </div>
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.getElementById('openBtn').addEventListener('click', () => {
+    document.getElementById('hero').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+
+    document.getElementById('music').play().catch(() => {});
+});
+
+document.getElementById('surpriseBtn').addEventListener('click', () => {
+    document.getElementById('popup').style.display = 'flex';
+});
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+const container = document.getElementById('floatingElements');
+const symbols = ['🌹', '❤️', '💕', '🌺'];
+
+for(let i = 0; i < 40; i++) {
+
+    const item = document.createElement('div');
+
+    item.className = 'float-item';
+    item.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (18 + Math.random() * 18) + 'px';
+    item.style.animationDuration = (10 + Math.random() * 10) + 's';
+    item.style.animationDelay = Math.random() * 12 + 's';
+
+    container.appendChild(item);
+}
+</script>
+
+</body>
+</html>
