@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Anniversary ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    position:relative;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,105,180,.18), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(186,85,211,.18), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(255,182,193,.12), transparent 30%),
+        linear-gradient(180deg,#060814 0%, #12081d 35%, #1d0b2f 70%, #09020f 100%);
+}
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    pointer-events:none;
+    z-index:0;
+}
+
+body::before{
+    top:-150px;
+    left:-100px;
+    background:rgba(255,105,180,.12);
+}
+
+body::after{
+    bottom:-150px;
+    right:-100px;
+    background:rgba(186,85,211,.10);
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.8);}
+}
+
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:2;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    to{
+        transform:translateY(-120vh) translateX(70px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.container{
+    position:relative;
+    z-index:5;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px 80px;
+}
+
+.photo-frame{
+    width:220px;
+    height:220px;
+    margin:20px auto 35px;
+    border-radius:50%;
+    padding:6px;
+    background:linear-gradient(45deg,#ff7eb3,#d76dff,#ffd6e0);
+    box-shadow:0 0 40px rgba(255,182,193,.35);
+    transition:.4s;
+}
+
+.photo-frame:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 55px rgba(255,182,193,.55);
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,.9);
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    text-align:center;
+    font-size:5rem;
+    color:#ffd9f2;
+    text-shadow:0 0 25px rgba(255,182,193,.35);
+}
+
+.subtitle{
+    text-align:center;
+    margin:15px auto 45px;
+    max-width:650px;
+    color:#f9dff5;
+    line-height:1.8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border-radius:28px;
+    padding:30px;
+    min-height:220px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.11);
+}
+
+.card h2{
+    color:#ffd0ea;
+    margin-bottom:15px;
+}
+
+.content{
+    display:none;
+    margin-top:15px;
+    line-height:1.8;
+    color:#fff4fb;
+}
+
+.big{
+    font-size:1.4rem;
+    font-weight:600;
+    color:#ffe0f1;
+}
+
+.button{
+    margin-top:15px;
+    padding:12px 22px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff5da2,#d76dff);
+    color:white;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    margin-top:50px;
+    font-family:'Great Vibes',cursive;
+    font-size:2rem;
+    color:#ffd9f2;
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:3.8rem;
+    }
+
+    .photo-frame{
+        width:180px;
+        height:180px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+    <div class="photo-frame">
+        <img src="photo.jpg" alt="Our Favorite Memory">
+    </div>
+
+    <h1>Happy Anniversary, My Dudu ❤️</h1>
+
+    <p class="subtitle">
+        Tap any card and discover little pieces of my heart. ✨
+    </p>
+
+    <div class="grid">
+
+        <div class="card" onclick="toggle('time')">
+            <h2>⏳ Our Time</h2>
+            <div class="content" id="time">
+                <div class="big" id="counter"></div>
+                <p>Every second with you is my favorite.</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('letter')">
+            <h2>💌 Love Letter</h2>
+            <div class="content" id="letter">
+                Thank you for choosing me, loving me, and making my world brighter every day. No matter what happens, I promise to keep choosing you.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('reason')">
+            <h2>❤️ Why I Love You</h2>
+            <div class="content" id="reason">
+                <p id="reasonText">Click below for a reason.</p>
+
+                <button class="button" onclick="event.stopPropagation();newReason()">
+                    Another Reason 💖
+                </button>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('musicBox')">
+            <h2>🎵 Our Song</h2>
+            <div class="content" id="musicBox">
+                <button class="button" onclick="event.stopPropagation();toggleMusic()">
+                    Play / Pause 🎶
+                </button>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('surprise')">
+            <h2>🎁 Secret Surprise</h2>
+            <div class="content" id="surprise">
+                When you come to Nagpur, I'm taking you on a special date. No distractions, no rushing—just you and me. And yes, I already have a surprise planned for you. 🌹✨
+            </div>
+        </div>
+
+        <div class="card" onclick="toggle('wish')">
+            <h2>✨ Make a Wish</h2>
+            <div class="content" id="wish">
+                My wish is simple: more memories, more laughter, and many more anniversaries with you. ❤️
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Forever your Bubu ❤️
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function toggle(id){
+    const element = document.getElementById(id);
+    element.style.display =
+        element.style.display === "block" ? "none" : "block";
+}
+
+const reasons = [
+    "Your smile makes every day brighter.",
+    "You make ordinary moments magical.",
+    "You understand me like no one else.",
+    "Your laugh is my favorite sound.",
+    "Life feels better with you in it.",
+    "You care with your whole heart.",
+    "You make me want to be a better person.",
+    "You feel like home.",
+    "You are my favorite hello.",
+    "I choose you every single day."
+];
+
+function newReason(){
+    const random = Math.floor(Math.random() * reasons.length);
+    document.getElementById("reasonText").innerText = reasons[random];
+}
+
+const start = new Date("2025-02-18T00:00:00");
+
+function updateCounter(){
+    const now = new Date();
+    const diff = now - start;
+
+    const days = Math.floor(diff/(1000*60*60*24));
+    const hours = Math.floor(diff/(1000*60*60))%24;
+    const minutes = Math.floor(diff/(1000*60))%60;
+
+    document.getElementById("counter").innerText =
+    `${days} days, ${hours} hours, ${minutes} minutes`;
+}
+
+setInterval(updateCounter,1000);
+updateCounter();
+
+function toggleMusic(){
+    const music = document.getElementById("music");
+
+    if(music.paused){
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+    const star = document.createElement("div");
+    star.className = "star";
+
+    star.style.left = Math.random()*100 + "vw";
+    star.style.top = Math.random()*100 + "vh";
+    star.style.animationDelay = Math.random()*3 + "s";
+
+    stars.appendChild(star);
+}
+
+const hearts = document.getElementById("hearts");
+
+for(let i=0;i<35;i++){
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["❤️","💕","✨"][Math.floor(Math.random()*3)];
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*18) + "px";
+    heart.style.animationDuration = (8 + Math.random()*10) + "s";
+    heart.style.animationDelay = Math.random()*8 + "s";
+
+    hearts.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
